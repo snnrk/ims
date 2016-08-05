@@ -1,4 +1,5 @@
 en:
+  home: "Home"
   login: "LogIn"
   new_user?: "New User?"
   signup: "SignUp"

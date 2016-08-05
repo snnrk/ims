@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <%= gravatar_for(user, size: 50, class: "img-responsive") %>
+    <h1>
+      <%= link_to user.displayname, user %>
+    </h1>
+  </div>
+  <div class="col-sm-6 col-sm-offset-3">
+    <p>
+      <span class="glyphicon glyphicon-envelop"></span>
+      <%= link_to user.email.downcase.to_s, "mailto:" + user.email.downcase %>
+    </p>
+    <br>
+  </div>  
+</div>

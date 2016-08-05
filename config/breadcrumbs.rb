@@ -1,8 +1,13 @@
 crumb :home do
-  link "Home", home_path
+  link t(:home), home_path
 end
 
-crumb :issues do
+crumb :user do |user|
+  link user.displayname, user
+  parent :home
+end
+
+crumb :issue do
   link "All issues"
   parent :home
 end
