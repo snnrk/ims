@@ -1,3 +1,6 @@
 en:
-  signup: "Sign Up"
+  login: "LogIn"
+  new_user?: "New User?"
+  signup: "SignUp"
+  signup_now: "SignUP Now!"
   welcome: "Welcome to the IMS !"
