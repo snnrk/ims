@@ -6,14 +6,29 @@ class IssueTest < ActiveSupport::TestCase
   # end
   def setup
     @issue_success = issues(:issue1)
-    @issue_invalid_author_id = issues(:issue2)
+    @issue_fired_time_preceded = issues(:issue2)
+    @issue_start_time_preceded = issues(:issue3)
+    @issue_title_too_long = issues(:issue4)
+    @issue_impact_too_long = issues(:issue5)
   end
   
-  test "..." do
+  test "All required properties should be present" do
     assert @issue_success.valid?
   end
   
-  test "..." do
-    assert_not @issue_invalid_author_id.valid?
+  test "recovered_time should be precede dy fired_time" do
+    assert_not @issue_fired_time_preceded.valid?
+  end
+
+  test "ending_time should be precede dy start_time" do
+    assert_not @issue_start_time_preceded.valid?
+  end
+  
+  test "title should be within maximum characters" do
+    assert_not @issue_title_too_long.valid?
+  end
+  
+  test "impact should be within maximum characters" do
+    assert_not @issue_impact_too_long.valid?
   end
 end

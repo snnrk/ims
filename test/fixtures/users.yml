@@ -1,5 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-tester:
-  displayname: test
-  email: test@example.com
+user1:
+  displayname: test1
+  email: test1@example.com
   password_digest: password
+
+user2:
+  email: test2@example.com
+  password_digest: password
+
+user3:
+  displayname: test3
+  password_digest: password
+
+user4:
+  displayname: test4
+  email: test4.example.com
+  password_digest: password
+
+user5:
+  displayname: test5
+  email: test5@example.com

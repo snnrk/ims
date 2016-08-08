@@ -2,31 +2,34 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = users(:tester)
-    @issue = issues(:issue1)
+    @user = users(:user1)
+    @user_without_displayname = users(:user2)
+    @user_without_email = users(:user3)
+    @user_with_invalid_email = users(:user4)
+    @user_without_password = users(:user5)
   end
   
-  test "shoud be valid" do
+  test "all required properties shoud be present" do
     assert @user.valid?
   end
   
-  test "name should be present" do
-    @user.displayname = "    "
-    assert_not @user.valid?
+  test "displayname should be present" do
+    assert_not @user_without_displayname.valid?    
   end
   
-  test "email shoud be present" do
-    @user.email = nil
-    assert_not @user.valid?
+  test "email should be present" do
+    assert_not @user_without_email.valid?
   end
-  
-  test "email shoud be in valid format" do
-    @user.email = "example.com"
-    assert_not @user.valid?
+
+  test "email should be with valid format" do
+    assert_not @user_with_invalid_email.valid?
   end
   
   test "password should be present" do
-    @user.password_digest = ""
-    assert_not @user.valid?
+    assert_not @user_without_password.valid?
+  end
+  
+  test "written_issues should be counted" do
+    assert @user.written_issues.count > 0
   end
 end
