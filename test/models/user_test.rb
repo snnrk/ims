@@ -2,7 +2,8 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(displayname: "Example User", email: "user@example.com", password_digest: BCrypt::Password.create("password", cost: 4))
+    @user = users(:tester)
+    @issue = issues(:issue1)
   end
   
   test "shoud be valid" do
@@ -21,6 +22,11 @@ class UserTest < ActiveSupport::TestCase
   
   test "email shoud be in valid format" do
     @user.email = "example.com"
+    assert_not @user.valid?
+  end
+  
+  test "password should be present" do
+    @user.password_digest = ""
     assert_not @user.valid?
   end
 end

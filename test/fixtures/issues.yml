@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+issue1:
+  title: Touble1
+  fired_time: 2016-01-01 00:00:00
+  recovered_time: 2016-01-01 00:10:00
+  start_time: 2016-01-01 00:01:00
+  ending_time: 2016-01-01 00:30:00
+  impact: "サイト全体"
+  author_id: 1
+
+issue2:
+  title: Trouble2
+  fired_time: 2016-03-01 00:00:00
+  recovered_time: 2016-03-01 00:10:00
+  start_time: 2016-03-01 00:01:00
+  ending_time: 2016-03-01 00:30:00
+  impact: "サイト全体"
+  author_id: 2
