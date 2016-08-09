@@ -2,20 +2,7 @@
 <div class="issue-detail">
   <div class="page-header">
     <span class="issue-title">#<%= @issue.id.to_s %> <%= @issue.title %></span>
-    <div class="btn-group btn-group-sm pull-right">
-      <%= button_tag class: "btn btn-default dropdown-toggle", "data-toggle": "dropdown" do %>
-        <%= t(:actions) %>
-        <%= content_tag :span, nil, class: "caret" %>
-      <% end %>
-      <ul class="dropdown-menu" role="menu">
-        <li>
-          <%= link_to content_tag(:i, t(:edit), class: "glyphicon glyphicon-pencil"), edit_issue_path(@issue) %>
-        </li>
-        <li>
-          <%= link_to content_tag(:i, t(:delete), class: "glyphicon glyphicon-trash"), @issue, method: :delete %>
-        </li>
-      </ul>
-    </div>
+    <%= render 'actions', issue: @issue, additional_class: "pull-right", title: t(:actions) %>
   </div>
   <div class="row">
     <div class="col-sm-6">
