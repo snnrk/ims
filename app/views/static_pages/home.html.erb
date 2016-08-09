@@ -1,2 +1,3 @@
 <% breadcrumb :home %>
-<h1>home</h1>
+<h1><%= t(:related_issues) %></h1>
+<%= render 'issues/issue_list', issues: @issues %>

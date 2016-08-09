@@ -14,11 +14,11 @@
       <div class="collapse navbar-collapse" id="ims-nav-button">
         <ul class="nav navbar-nav navbar-right">
           <% unless logged_in? %>
-            <li><%= link_to t(:signup), '#' %></li>
+            <li><%= link_to t(:signup), signup_path %></li>
             <li><%= link_to t(:login), login_path %></li>
           <% else %>
             <li>
-              <%= link_to t(:issue), issues_path(user_id: current_user.id) %>
+              <%= link_to t(:issue), issues_path %>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

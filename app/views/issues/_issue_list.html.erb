@@ -1,0 +1,28 @@
+<table class="table table-striped table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th><%= Issue.human_attribute_name(:title) %></th>
+      <th><%= Issue.human_attribute_name(:impact) %></th>
+      <th><%= Issue.human_attribute_name(:fired_time) %></th>
+      <th><%= Issue.human_attribute_name(:recovered_time) %></th>
+      <th><%= Issue.human_attribute_name(:start_time) %></th>
+      <th><%= Issue.human_attribute_name(:ending_time) %></th>
+      <th><%= Issue.human_attribute_name(:author) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% issues.each do |i| %>
+      <tr>
+        <td><%= i.id %></td>
+        <td><%= link_to i.title, i %></td>
+        <td><%= i.impact %></td>
+        <td><%= l(i.fired_time.in_time_zone) %></td>
+        <td><%= l(i.recovered_time) if i.recovered_time.present? %></td>
+        <td><%= l(i.start_time) if i.start_time.present? %></td>
+        <td><%= l(i.ending_time) if i.ending_time.present? %></td>
+        <td><%= link_to i.author.displayname, i.author %></td>
+      </tr>
+    <% end %>  
+  </tbody>
+</table>

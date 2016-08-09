@@ -1,4 +1,6 @@
 en:
+  blank_field: "-"
+  crumb_issues: "All issues"
   home: "Home"
   login: "LogIn"
   new_user?: "New User?"

@@ -1,1 +1,18 @@
 en:
+  activerecord:
+    models:
+      issue: Issue
+      user: User
+    attributes:
+      issue:
+        author: Author
+        fired_time: "Fired"
+        impact: Impact
+        recovered_time: "Recovered"
+        start_time: "Operation started"
+        ending_time: "Operation ended"
+        title: Title
+      user:
+        displayname: Name
+        email: E-mail
+        password: Password
