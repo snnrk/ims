@@ -1,7 +1,10 @@
 class IssuesController < ApplicationController
-  before_action :set_issue, only: [:delete, :edit, :show]
+  before_action :set_issue, only: [:destroy, :edit, :show, :update]
   
-  def delete
+  def destroy
+    @issue.destroy
+    flash[:success] = t(:issue_delete_success)
+    redirect_to issues_path
   end
 
   def edit
@@ -17,6 +20,15 @@ class IssuesController < ApplicationController
   end
   
   def show
+  end
+
+  def update
+    @issue.update(issue_params)
+    if @issue.save
+      redirect_to @issue
+    else
+      render 'edit'
+    end
   end
 
   private

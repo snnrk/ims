@@ -1,0 +1,60 @@
+<div class="row">
+  <%= form_for(issue) do |f| %>
+    <div class="col-md-12">
+      <%= render 'shared/error_messages', object: f.object %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :impact %>
+      <%= f.text_field :impact, class: 'form-control' %>
+    </div>
+    <div class="col-md-6">
+        <%= f.label :fired_time %>
+        <div class="input-group datetime datepicker">
+          <%= f.text_field :fired_time, class: 'form-control' %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <%= f.label :recovered_time %>
+        <div class="input-group datetime datepicker">
+          <%= f.text_field :recovered_time, class: 'form-control' %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <%= f.label :start_time %>
+        <div class="input-group datetime datepicker">
+          <%= f.text_field :start_time, class: 'form-control' %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <%= f.label :ending_time %>
+        <div class="input-group datetime datepicker">
+          <%= f.text_field :ending_time, class: 'form-control' %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+    </div>
+    <% if params[:action] == 'edit' || params[:action] == 'update' %>
+      <%# TODO %>      
+    <% end %>
+    <div class="col-md-12">
+      <div class="btn-group btn-group-responsive actions">
+        <%= f.submit class: "btn btn-primary" %>
+        <%= f.button t(:reset), type: :reset, class: "btn btn-danger" %>
+      </div>
+    </div>
+  <% end %>
+</div>

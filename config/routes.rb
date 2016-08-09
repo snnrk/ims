@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'home', to: 'static_pages#home'
 
   # issues
-  resources :issues, only: [:destroy, :edit, :index, :show]
+  resources :issues, only: [:destroy, :edit, :index, :show, :update]
   
   # sessions
   resources :sessions, only: [:create, :destroy, :new]
