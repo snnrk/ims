@@ -32,4 +32,8 @@ class UserTest < ActiveSupport::TestCase
   test "written_issues should be counted" do
     assert @user.written_issues.count > 0
   end
+  
+  test "assigned_issues should be counted" do
+    assert @user.assigned_issues.count > 0
+  end
 end

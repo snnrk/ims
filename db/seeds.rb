@@ -13,3 +13,5 @@ user5  = User.create(displayname: "test5", email: "test5@example.com" , password
 
 issue1 = Issue.create(title: "trouble1", fired_time: Time.zone.parse('2016-01-01 00:00:00'), impact: 'Site',                author: user1)
 issue2 = Issue.create(title: "trouble2", fired_time: Time.zone.parse('2016-02-01 00:00:00'), impact: 'Redundancy degraded', author: user1)
+issue3 = Issue.create(title: "trouble3", fired_time: Time.zone.parse('2016-03-01 00:00:00'), impact: 'Single server',       author: user2, assigned: user1)
+issue4 = Issue.create(title: "trouble3", fired_time: Time.zone.parse('2016-03-01 00:00:00'), impact: 'None',       author: user2, assigned: user2)

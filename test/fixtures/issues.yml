@@ -43,3 +43,10 @@ issue5:
   impact: "Site56789012345678901234567890"
   author: user1
 
+issue6:
+  title: Touble6
+  fired_time: 2016-01-01 00:00:00
+  impact: "Site"
+  author: user1
+  assigned: user1
+
