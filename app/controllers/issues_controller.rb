@@ -1,4 +1,5 @@
 class IssuesController < ApplicationController
+  before_action :logged_in_user
   before_action :set_issue, only: [:destroy, :edit, :show, :update]
   
   def create
@@ -40,6 +41,7 @@ class IssuesController < ApplicationController
   def update
     @issue.update(issue_params)
     if @issue.save
+      flash[:success] = t(:issue_update_success)
       redirect_to @issue
     else
       render 'edit'
