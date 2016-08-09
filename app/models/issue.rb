@@ -6,6 +6,7 @@ class Issue < ActiveRecord::Base
   validates :impact, length: { maximum: 20 }
   validates :author_id, presence: true
   belongs_to :author, class_name: "User"
+  belongs_to :assigned, class_name: "User"
   
   private
   

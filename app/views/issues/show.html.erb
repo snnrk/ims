@@ -5,11 +5,14 @@
     <%= render 'actions', issue: @issue, additional_class: "pull-right", title: t(:actions) %>
   </div>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-3">
       <p class="issue_field"><%= label @issue, :impact %>: <%= @issue.impact %></p>
     </div>
-    <div class="col-sm-6">
-      <p class="issue_field"><%= label @issue, :author %>: <%= link_to @issue.author.displayname, @issue %></p>
+    <div class="col-sm-3">
+      <p class="issue_field"><%= label @issue, :author %>: <%= link_to @issue.author.displayname, @issue.author %></p>
+    </div>
+    <div class="col-sm-3">
+      <p class="issue_field"><%= label @issue, :assigned %>: <%= link_to @issue.assigned.displayname, @issue.assigned if @issue.assigned.present? %></p>
     </div>
     <div class="col-sm-6">
       <p class="issue_field"><%= label @issue, :fired_time %>: <%= l(@issue.fired_time) %></p>

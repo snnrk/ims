@@ -51,7 +51,7 @@ class IssuesController < ApplicationController
   private
   
   def issue_params
-    params.require(:issue).permit(:title, :impact, :fired_time, :recovered_time, :start_time, :ending_time)
+    params.require(:issue).permit(:title, :impact, :fired_time, :recovered_time, :start_time, :ending_time, :assigned_id)
   end
 
   def set_issue

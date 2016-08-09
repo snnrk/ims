@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :written_issues, class_name: "Issue", foreign_key: :author_id
-  #has_many :assigned_issues, class_name: "Issue", foreign_key: :assigned_id
+  has_many :assigned_issues, class_name: "Issue", foreign_key: :assigned_id
 end

@@ -8,6 +8,7 @@
       <th><%= Issue.human_attribute_name(:recovered_time) %></th>
       <th><%= Issue.human_attribute_name(:start_time) %></th>
       <th><%= Issue.human_attribute_name(:ending_time) %></th>
+      <th><%= Issue.human_attribute_name(:assigned) %></th>
       <th><%= Issue.human_attribute_name(:author) %></th>
       <th><%= t(:actions) %></th>
     </tr>
@@ -22,8 +23,9 @@
         <td><%= l(i.recovered_time) if i.recovered_time.present? %></td>
         <td><%= l(i.start_time) if i.start_time.present? %></td>
         <td><%= l(i.ending_time) if i.ending_time.present? %></td>
+        <td><%= link_to i.assigned.displayname, i.assigned if i.assigned.present? %></td>
         <td><%= link_to i.author.displayname, i.author %></td>
-        <td><%= render 'actions', issue: i, additional_class: nil, title: nil %></td>
+        <td><%= render 'issues/actions', issue: i, additional_class: nil, title: nil %></td>
       </tr>
     <% end %>  
   </tbody>
