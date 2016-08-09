@@ -13,6 +13,10 @@ crumb :issues do
 end
 
 crumb :issue do |issue|
-  link "#" + issue.id.to_s, issue
+  if issue.nil?
+    link t(:crumb_new_issue)
+  else
+    link "#" + issue.id.to_s, issue
+  end
   parent :issues
 end
