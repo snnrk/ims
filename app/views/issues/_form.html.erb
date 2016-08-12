@@ -18,7 +18,7 @@
     <div class="col-md-6">
       <%= f.label :fired_time %>
       <div class="input-group datetime datepicker">
-        <%= f.datetime_field :fired_time, class: 'form-control', value: l(issue.fired_time) %>
+        <%= f.datetime_field :fired_time, class: 'form-control', value: params[:action] == 'new' ? '' : (issue.fired_time) %>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
