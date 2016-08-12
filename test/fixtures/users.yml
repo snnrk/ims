@@ -2,20 +2,20 @@
 user1:
   displayname: test1
   email: test1@example.com
-  password_digest: password
+  password_digest: <%= BCrypt::Password.create("password", const: 4) %>
 
 user2:
   email: test2@example.com
-  password_digest: password
+  password_digest: <%= BCrypt::Password.create("password", const: 4) %>
 
 user3:
   displayname: test3
-  password_digest: password
+  password_digest: <%= BCrypt::Password.create("password", const: 4) %>
 
 user4:
   displayname: test4
   email: test4.example.com
-  password_digest: password
+  password_digest: <%= BCrypt::Password.create("password", const: 4) %>
 
 user5:
   displayname: test5
