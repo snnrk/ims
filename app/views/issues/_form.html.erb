@@ -18,7 +18,7 @@
     <div class="col-md-6">
       <%= f.label :fired_time %>
       <div class="input-group datetime datepicker">
-        <%= f.datetime_field :fired_time, class: 'form-control' %>
+        <%= f.datetime_field :fired_time, class: 'form-control', value: l(issue.fired_time) %>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -27,7 +27,7 @@
     <div class="col-md-6">
       <%= f.label :recovered_time %>
       <div class="input-group datetime datepicker">
-        <%= f.text_field :recovered_time, class: 'form-control' %>
+        <%= f.text_field :recovered_time, class: 'form-control', value: issue.recovered_time.nil? ? '' : l(issue.recovered_time) %>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -36,7 +36,7 @@
     <div class="col-md-6">
       <%= f.label :start_time %>
       <div class="input-group datetime datepicker">
-        <%= f.text_field :start_time, class: 'form-control' %>
+        <%= f.text_field :start_time, class: 'form-control', value: issue.start_time.nil? ? '' : l(issue.start_time) %>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -45,7 +45,7 @@
     <div class="col-md-6">
       <%= f.label :ending_time %>
       <div class="input-group datetime datepicker">
-        <%= f.text_field :ending_time, class: 'form-control' %>
+        <%= f.text_field :ending_time, class: 'form-control', value: issue.ending_time.nil? ? '' : l(issue.ending_time) %>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>

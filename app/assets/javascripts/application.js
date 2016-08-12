@@ -12,16 +12,14 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
 
-var data = {'data-date-format': 'YYYY-MM-DD hh:mm:ss' };
-$(function(){
-  $('datetime').data(data)
-  $('.datepicker').datetimepicker({
-    format: 'YYYY-MM-DD hh:mm:ss'
-  });
+/* global $ */
+$(document).ready(function() {
+  $('.datepicker').datetimepicker({ format: 'YYYY-MM-DD HH:mm:ss' });
 });
